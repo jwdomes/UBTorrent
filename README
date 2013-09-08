@@ -1,0 +1,8 @@
+Eric Nagler (ednagler@buffalo.edu)
+Justin Domes (justindo@buffalo.edu)
+
+Application works to specifications on Linux computers nickelback and timberlake and SunOS computer pollux.  The application implements optimistic unchoke and the rarest first algorithm.  To compile the application just run the make command on the linux computers and the gmake command on the SunOS computers.  The application takes two arguments.  The first is .torrent path and the second is the port number to be used.  An example of a start up command would be: 
+
+./ubtorrent SS.mp3.torrent 18943
+
+We utilize multithreading to deal with the program's networking and data transfer capabilities.  Threads are created to deal with accepting incoming peer connection requests (AcceptConnectionHandler), handling the sending of connection requests to other peers (AnnounceConnectionHandler), and taking care of the optimistic unchoking algorithm (OptimisticUnchoke).  Also, we create one thread per active peer connection to deal with sending messages to and receiving messages from each peer (PeerThread(s)).
